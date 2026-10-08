@@ -1,0 +1,14 @@
+services:
+  vless-dashboard:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      # حذف کن یا مقدار بده تا هر بار همون UUID ثابت بمونه
+      VLESS_UUID: ""
+      WS_PATH: "vless-ws"
+      XRAY_INTERNAL_PORT: "10086"
+      DASH_USER: "admin"
+      DASH_PASS: "change-me"
+    restart: unless-stopped

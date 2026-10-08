@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VLESS Dashboard</title>
+<link rel="stylesheet" href="/style.css" />
+<script src="/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-bar">
+      <div>
+        <span class="eyebrow">Xray · VLESS + WS</span>
+        <h1>Client dashboard</h1>
+        <p class="sub" style="margin-bottom:0;">One UUID per person or device — each gets its own link, QR code, and usage cap.</p>
+        <div class="stat-chips" id="statChips"></div>
+      </div>
+      <div class="row">
+        <button class="secondary" id="refreshBtn">Refresh usage</button>
+        <button class="secondary" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="label">Add a new config</div>
+      </div>
+      <div class="row">
+        <input type="text" id="newLabel" placeholder="Label (e.g. My phone)" />
+        <input type="number" id="newLimitValue" placeholder="Limit (optional)" min="0" step="any" class="limit-value-input" />
+        <select id="newLimitUnit" class="limit-unit-select">
+          <option value="MB">MB</option>
+          <option value="GB" selected>GB</option>
+          <option value="TB">TB</option>
+        </select>
+        <button id="createBtn">+ Create</button>
+      </div>
+      <p class="sub" style="margin:8px 0 0;">Leave the limit empty for unlimited.</p>
+    </div>
+
+    <div id="list"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

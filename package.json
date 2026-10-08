@@ -1,0 +1,16 @@
+{
+  "name": "vless-xray-dashboard",
+  "version": "2.1.0",
+  "private": true,
+  "description": "VLESS+WS Xray inbound with a password-protected multi-client dashboard, live usage over WebSocket, and subscription link, deployable as a single container on Sevalla",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-proxy": "^1.18.1",
+    "cookie": "^0.6.0",
+    "ws": "^8.18.0"
+  }
+}
